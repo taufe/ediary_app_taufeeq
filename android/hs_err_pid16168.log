@@ -1,0 +1,600 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65536 bytes for Failed to commit metaspace.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (virtualSpaceNode.cpp:110), pid=16168, tid=3008
+#
+# JRE version: OpenJDK Runtime Environment Microsoft-8035246 (17.0.8+7) (build 17.0.8+7-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Microsoft-8035246 (17.0.8+7-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Sentrix Technologies\react-native-ediary\node_modules\react-native-safe-area-context\android\build\20240423_9569901468504687564.compiler.options
+
+Host: Intel(R) Core(TM) i5-4210U CPU @ 1.70GHz, 4 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+Time: Tue Apr 23 13:31:41 2024 Pakistan Standard Time elapsed time: 7.540508 seconds (0d 0h 0m 7s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000144d7775530):  JavaThread "main" [_thread_in_vm, id=3008, stack(0x00000032eaf00000,0x00000032eb000000)]
+
+Stack: [0x00000032eaf00000,0x00000032eb000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67bf3a]
+V  [jvm.dll+0x83a024]
+V  [jvm.dll+0x83b7ce]
+V  [jvm.dll+0x83be33]
+V  [jvm.dll+0x24785f]
+V  [jvm.dll+0x8360bb]
+V  [jvm.dll+0x6206e6]
+V  [jvm.dll+0x1c1f8e]
+V  [jvm.dll+0x623031]
+V  [jvm.dll+0x621086]
+V  [jvm.dll+0x23be0f]
+V  [jvm.dll+0x62af15]
+V  [jvm.dll+0x1ebe9b]
+V  [jvm.dll+0x1ec3d5]
+V  [jvm.dll+0x1ece0f]
+V  [jvm.dll+0x1e22c1]
+V  [jvm.dll+0x542490]
+V  [jvm.dll+0x7b4e38]
+V  [jvm.dll+0x7b4f24]
+V  [jvm.dll+0x411635]
+V  [jvm.dll+0x4177b9]
+C  [java.dll+0x17ec]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 526  java.lang.ClassLoader.defineClass1(Ljava/lang/ClassLoader;Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.8 (0 bytes) @ 0x00000144e6d60d63 [0x00000144e6d60ca0+0x00000000000000c3]
+J 519 c1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; java.base@17.0.8 (43 bytes) @ 0x00000144df35d854 [0x00000144df35d500+0x0000000000000354]
+J 483 c1 java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class; java.base@17.0.8 (16 bytes) @ 0x00000144df341c0c [0x00000144df341b40+0x00000000000000cc]
+J 473 c1 jdk.internal.loader.BuiltinClassLoader.defineClass(Ljava/lang/String;Ljdk/internal/loader/Resource;)Ljava/lang/Class; java.base@17.0.8 (121 bytes) @ 0x00000144df33c834 [0x00000144df33b520+0x0000000000001314]
+J 354 c1 jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.8 (64 bytes) @ 0x00000144df2f1edc [0x00000144df2f0e00+0x00000000000010dc]
+J 210 c1 jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(Ljava/lang/String;Z)Ljava/lang/Class; java.base@17.0.8 (143 bytes) @ 0x00000144df2b76f4 [0x00000144df2b67c0+0x0000000000000f34]
+J 311 c1 jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; java.base@17.0.8 (40 bytes) @ 0x00000144df2d5304 [0x00000144df2d4ce0+0x0000000000000624]
+J 310 c1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; java.base@17.0.8 (7 bytes) @ 0x00000144df2d494c [0x00000144df2d4840+0x000000000000010c]
+v  ~StubRoutines::call_stub
+j  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;Ljava/lang/Class;)Ljava/lang/Class;+0 java.base@17.0.8
+j  java.lang.Class.forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;+43 java.base@17.0.8
+j  kotlin.reflect.jvm.internal.impl.descriptors.runtime.components.ReflectJavaClassFinderKt.tryLoadClass(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;+16
+j  kotlin.reflect.jvm.internal.impl.descriptors.runtime.components.ReflectKotlinClassFinder.findKotlinClass(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/load/kotlin/KotlinClassFinder$Result;+5
+j  kotlin.reflect.jvm.internal.impl.descriptors.runtime.components.ReflectKotlinClassFinder.findKotlinClassOrContent(Lkotlin/reflect/jvm/internal/impl/name/ClassId;)Lkotlin/reflect/jvm/internal/impl/load/kotlin/KotlinClassFinder$Result;+11
+j  kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaPackageScope$classes$1.invoke(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/descriptors/LazyJavaPackageScope$FindClassRequest;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;+68
+j  kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaPackageScope$classes$1.invoke(Ljava/lang/Object;)Ljava/lang/Object;+5
+J 885 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunction.invoke(Ljava/lang/Object;)Ljava/lang/Object; (356 bytes) @ 0x00000144df405ce4 [0x00000144df4051e0+0x0000000000000b04]
+j  kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaPackageScope.findClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;+61
+j  kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaPackageScope.getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;+15
+j  kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.JvmPackageScope.getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+24
+j  kotlin.reflect.jvm.internal.impl.resolve.scopes.ChainedMemberScope.getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+54
+j  kotlin.reflect.jvm.internal.impl.resolve.scopes.AbstractScopeAdapter.getContributedClassifier(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+18
+j  kotlin.reflect.jvm.internal.impl.descriptors.FindClassInModuleKt.findClassifierAcrossModuleDependencies(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;Lkotlin/reflect/jvm/internal/impl/name/ClassId;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+96
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer.computeClassifierDescriptor(I)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+45
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer.access$computeClassifierDescriptor(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/TypeDeserializer;I)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+2
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer$classifierDescriptors$1.invoke(I)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;+5
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer$classifierDescriptors$1.invoke(Ljava/lang/Object;)Ljava/lang/Object;+8
+J 885 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunction.invoke(Ljava/lang/Object;)Ljava/lang/Object; (356 bytes) @ 0x00000144df405ce4 [0x00000144df4051e0+0x0000000000000b04]
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer.typeConstructor(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;)Lkotlin/reflect/jvm/internal/impl/types/TypeConstructor;+19
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer.simpleType(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;Z)Lkotlin/reflect/jvm/internal/impl/types/SimpleType;+54
+J 1048 c1 kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer.type(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Type;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType; (94 bytes) @ 0x00000144df45e3dc [0x00000144df45da20+0x00000000000009bc]
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.MemberDeserializer.valueParameters(Ljava/util/List;Lkotlin/reflect/jvm/internal/impl/protobuf/MessageLite;Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/AnnotatedCallableKind;)Ljava/util/List;+262
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.MemberDeserializer.loadFunction(Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Function;)Lkotlin/reflect/jvm/internal/impl/descriptors/SimpleFunctionDescriptor;+521
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.computeFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+220
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.access$computeFunctions(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation;Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+2
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation$functions$1.invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+11
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation$functions$1.invoke(Ljava/lang/Object;)Ljava/lang/Object;+5
+J 885 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunction.invoke(Ljava/lang/Object;)Ljava/lang/Object; (356 bytes) @ 0x00000144df405ce4 [0x00000144df4051e0+0x0000000000000b04]
+J 990 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull.invoke(Ljava/lang/Object;)Ljava/lang/Object; (56 bytes) @ 0x00000144df43f8bc [0x00000144df43f840+0x000000000000007c]
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;+37
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope.getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;+18
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor$DeserializedClassMemberScope.getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;+21
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor$DeserializedClassMemberScope.computeNonDeclaredFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Ljava/util/List;)V+74
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.computeFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+298
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.access$computeFunctions(Lkotlin/reflect/jvm/internal/impl/serialization/deserialization/descriptors/DeserializedMemberScope$OptimizedImplementation;Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+2
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation$functions$1.invoke(Lkotlin/reflect/jvm/internal/impl/name/Name;)Ljava/util/Collection;+11
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation$functions$1.invoke(Ljava/lang/Object;)Ljava/lang/Object;+5
+J 885 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunction.invoke(Ljava/lang/Object;)Ljava/lang/Object; (356 bytes) @ 0x00000144df405ce4 [0x00000144df4051e0+0x0000000000000b04]
+J 990 c1 kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$MapBasedMemoizedFunctionToNotNull.invoke(Ljava/lang/Object;)Ljava/lang/Object; (56 bytes) @ 0x00000144df43f8bc [0x00000144df43f840+0x000000000000007c]
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.getContributedFunctions(Lkotlin/reflect/jvm/internal/impl/name/Name;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;+37
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope$OptimizedImplementation.addFunctionsAndPropertiesTo(Ljava/util/Collection;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)V+275
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope.computeDescriptors(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;Lkotlin/reflect/jvm/internal/impl/incremental/components/LookupLocation;)Ljava/util/Collection;+63
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor$DeserializedClassMemberScope$allDescriptors$1.invoke()Ljava/util/Collection;+19
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor$DeserializedClassMemberScope$allDescriptors$1.invoke()Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$LockBasedLazyValue.invoke()Ljava/lang/Object;+156
+j  kotlin.reflect.jvm.internal.impl.storage.LockBasedStorageManager$LockBasedNotNullLazyValue.invoke()Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor$DeserializedClassMemberScope.getContributedDescriptors(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;)Ljava/util/Collection;+16
+j  kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope$DefaultImpls.getContributedDescriptors$default(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/ResolutionScope;Lkotlin/reflect/jvm/internal/impl/resolve/scopes/DescriptorKindFilter;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/util/Collection;+41
+j  kotlin.reflect.jvm.internal.KDeclarationContainerImpl.getMembers(Lkotlin/reflect/jvm/internal/impl/resolve/scopes/MemberScope;Lkotlin/reflect/jvm/internal/KDeclarationContainerImpl$MemberBelonginess;)Ljava/util/Collection;+29
+j  kotlin.reflect.jvm.internal.KClassImpl$Data$declaredNonStaticMembers$2.invoke()Ljava/util/Collection;+14
+j  kotlin.reflect.jvm.internal.KClassImpl$Data$declaredNonStaticMembers$2.invoke()Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.ReflectProperties$LazySoftVal.invoke()Ljava/lang/Object;+28
+j  kotlin.reflect.jvm.internal.ReflectProperties$Val.getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.KClassImpl$Data.getDeclaredNonStaticMembers()Ljava/util/Collection;+11
+j  kotlin.reflect.jvm.internal.KClassImpl$Data$allNonStaticMembers$2.invoke()Ljava/util/List;+4
+j  kotlin.reflect.jvm.internal.KClassImpl$Data$allNonStaticMembers$2.invoke()Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.ReflectProperties$LazySoftVal.invoke()Ljava/lang/Object;+28
+j  kotlin.reflect.jvm.internal.ReflectProperties$Val.getValue(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+1
+j  kotlin.reflect.jvm.internal.KClassImpl$Data.getAllNonStaticMembers()Ljava/util/Collection;+11
+j  kotlin.reflect.full.KClasses.getMemberProperties(Lkotlin/reflect/KClass;)Ljava/util/Collection;+19
+j  org.jetbrains.kotlin.cli.common.arguments.ParseCommandLineArgumentsKt.parsePreprocessedCommandLineArguments(Ljava/util/List;Lorg/jetbrains/kotlin/cli/common/arguments/CommonToolArguments;Lorg/jetbrains/kotlin/cli/common/arguments/ArgumentParseErrors;)V+7
+j  org.jetbrains.kotlin.cli.common.arguments.ParseCommandLineArgumentsKt.parseCommandLineArguments(Ljava/util/List;Lorg/jetbrains/kotlin/cli/common/arguments/CommonToolArguments;)V+68
+j  org.jetbrains.kotlin.cli.common.CLITool.exec(Ljava/io/PrintStream;Lorg/jetbrains/kotlin/config/Services;Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;[Ljava/lang/String;)Lorg/jetbrains/kotlin/cli/common/ExitCode;+38
+j  org.jetbrains.kotlin.cli.common.CLITool.exec(Ljava/io/PrintStream;Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;[Ljava/lang/String;)Lorg/jetbrains/kotlin/cli/common/ExitCode;+25
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.doMainNoExit(Lorg/jetbrains/kotlin/cli/common/CLITool;[Ljava/lang/String;Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;)Lorg/jetbrains/kotlin/cli/common/ExitCode;+39
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.doMainNoExit$default(Lorg/jetbrains/kotlin/cli/common/CLITool$Companion;Lorg/jetbrains/kotlin/cli/common/CLITool;[Ljava/lang/String;Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;ILjava/lang/Object;)Lorg/jetbrains/kotlin/cli/common/ExitCode;+16
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.doMain(Lorg/jetbrains/kotlin/cli/common/CLITool;[Ljava/lang/String;)V+57
+j  org.jetbrains.kotlin.cli.jvm.K2JVMCompiler$Companion.main([Ljava/lang/String;)V+20
+j  org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000144f704c890, length=12, elements={
+0x00000144d7775530, 0x00000144f2c41430, 0x00000144f2c422b0, 0x00000144f2c527f0,
+0x00000144f2c53d90, 0x00000144f2c57770, 0x00000144f2c58130, 0x00000144f2c5a640,
+0x00000144f2cbd2c0, 0x00000144f2cccc50, 0x00000144f70707e0, 0x00000144f7071d90
+}
+
+Java Threads: ( => current thread )
+=>0x00000144d7775530 JavaThread "main" [_thread_in_vm, id=3008, stack(0x00000032eaf00000,0x00000032eb000000)]
+  0x00000144f2c41430 JavaThread "Reference Handler" daemon [_thread_blocked, id=12364, stack(0x00000032eb700000,0x00000032eb800000)]
+  0x00000144f2c422b0 JavaThread "Finalizer" daemon [_thread_blocked, id=8820, stack(0x00000032eb800000,0x00000032eb900000)]
+  0x00000144f2c527f0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10848, stack(0x00000032eb900000,0x00000032eba00000)]
+  0x00000144f2c53d90 JavaThread "Attach Listener" daemon [_thread_blocked, id=13468, stack(0x00000032eba00000,0x00000032ebb00000)]
+  0x00000144f2c57770 JavaThread "Service Thread" daemon [_thread_blocked, id=15852, stack(0x00000032ebb00000,0x00000032ebc00000)]
+  0x00000144f2c58130 JavaThread "Monitor Deflation Thread" daemon [_thread_blocked, id=15328, stack(0x00000032ebc00000,0x00000032ebd00000)]
+  0x00000144f2c5a640 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=15768, stack(0x00000032ebd00000,0x00000032ebe00000)]
+  0x00000144f2cbd2c0 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8736, stack(0x00000032ebe00000,0x00000032ebf00000)]
+  0x00000144f2cccc50 JavaThread "Sweeper thread" daemon [_thread_blocked, id=14428, stack(0x00000032ebf00000,0x00000032ec000000)]
+  0x00000144f70707e0 JavaThread "Notification Thread" daemon [_thread_blocked, id=5592, stack(0x00000032ec000000,0x00000032ec100000)]
+  0x00000144f7071d90 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=9856, stack(0x00000032ec200000,0x00000032ec300000)]
+
+Other Threads:
+  0x00000144d7827820 VMThread "VM Thread" [stack: 0x00000032eb600000,0x00000032eb700000] [id=15592]
+  0x00000144f70710d0 WatcherThread [stack: 0x00000032ec100000,0x00000032ec200000] [id=12100]
+  0x00000144d77b0a20 GCTaskThread "GC Thread#0" [stack: 0x00000032eb100000,0x00000032eb200000] [id=10096]
+  0x00000144f737c500 GCTaskThread "GC Thread#1" [stack: 0x00000032ec300000,0x00000032ec400000] [id=14968]
+  0x00000144f7413a30 GCTaskThread "GC Thread#2" [stack: 0x00000032ec400000,0x00000032ec500000] [id=10036]
+  0x00000144f7413cf0 GCTaskThread "GC Thread#3" [stack: 0x00000032ec500000,0x00000032ec600000] [id=6360]
+  0x00000144d77b9730 ConcurrentGCThread "G1 Main Marker" [stack: 0x00000032eb200000,0x00000032eb300000] [id=14744]
+  0x00000144d77ba140 ConcurrentGCThread "G1 Conc#0" [stack: 0x00000032eb300000,0x00000032eb400000] [id=8880]
+  0x00000144d78075f0 ConcurrentGCThread "G1 Refine#0" [stack: 0x00000032eb400000,0x00000032eb500000] [id=8224]
+  0x00000144d7808020 ConcurrentGCThread "G1 Service" [stack: 0x00000032eb500000,0x00000032eb600000] [id=5928]
+
+Threads with active compile tasks:
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000144d7771a80] Metaspace_lock - owner thread: 0x00000144d7775530
+
+Heap address: 0x00000000c1200000, size: 1006 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000014480000000-0x0000014480bd0000-0x0000014480bd0000), size 12386304, SharedBaseAddress: 0x0000014480000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x0000014481000000-0x00000144c1000000, reserved size: 1073741824
+Narrow klass base: 0x0000014480000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CPUs: 4 total, 4 available
+ Memory: 4019M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (32-bit)
+ Heap Region Size: 1M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 64M
+ Heap Max Capacity: 1006M
+ Pre-touch: Disabled
+ Parallel Workers: 4
+ Concurrent Workers: 1
+ Concurrent Refinement Workers: 4
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 65536K, used 10932K [0x00000000c1200000, 0x0000000100000000)
+  region size 1024K, 7 young (7168K), 2 survivors (2048K)
+ Metaspace       used 8368K, committed 8512K, reserved 1114112K
+  class space    used 865K, committed 960K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, OA=open archive, CA=closed archive, TAMS=top-at-mark-start (previous, next)
+|   0|0x00000000c1200000, 0x00000000c1300000, 0x00000000c1300000|100%|HS|  |TAMS 0x00000000c1200000, 0x00000000c1200000| Complete 
+|   1|0x00000000c1300000, 0x00000000c1400000, 0x00000000c1400000|100%|HC|  |TAMS 0x00000000c1300000, 0x00000000c1300000| Complete 
+|   2|0x00000000c1400000, 0x00000000c1500000, 0x00000000c1500000|100%|HC|  |TAMS 0x00000000c1400000, 0x00000000c1400000| Complete 
+|   3|0x00000000c1500000, 0x00000000c1600000, 0x00000000c1600000|100%| O|  |TAMS 0x00000000c1500000, 0x00000000c1500000| Untracked 
+|   4|0x00000000c1600000, 0x00000000c1700000, 0x00000000c1700000|100%| O|  |TAMS 0x00000000c1600000, 0x00000000c1600000| Untracked 
+|   5|0x00000000c1700000, 0x00000000c172c800, 0x00000000c1800000| 17%| O|  |TAMS 0x00000000c1700000, 0x00000000c1700000| Untracked 
+|   6|0x00000000c1800000, 0x00000000c1800000, 0x00000000c1900000|  0%| F|  |TAMS 0x00000000c1800000, 0x00000000c1800000| Untracked 
+|   7|0x00000000c1900000, 0x00000000c1900000, 0x00000000c1a00000|  0%| F|  |TAMS 0x00000000c1900000, 0x00000000c1900000| Untracked 
+|   8|0x00000000c1a00000, 0x00000000c1a00000, 0x00000000c1b00000|  0%| F|  |TAMS 0x00000000c1a00000, 0x00000000c1a00000| Untracked 
+|   9|0x00000000c1b00000, 0x00000000c1b00000, 0x00000000c1c00000|  0%| F|  |TAMS 0x00000000c1b00000, 0x00000000c1b00000| Untracked 
+|  10|0x00000000c1c00000, 0x00000000c1c00000, 0x00000000c1d00000|  0%| F|  |TAMS 0x00000000c1c00000, 0x00000000c1c00000| Untracked 
+|  11|0x00000000c1d00000, 0x00000000c1d00000, 0x00000000c1e00000|  0%| F|  |TAMS 0x00000000c1d00000, 0x00000000c1d00000| Untracked 
+|  12|0x00000000c1e00000, 0x00000000c1e00000, 0x00000000c1f00000|  0%| F|  |TAMS 0x00000000c1e00000, 0x00000000c1e00000| Untracked 
+|  13|0x00000000c1f00000, 0x00000000c1f00000, 0x00000000c2000000|  0%| F|  |TAMS 0x00000000c1f00000, 0x00000000c1f00000| Untracked 
+|  14|0x00000000c2000000, 0x00000000c2000000, 0x00000000c2100000|  0%| F|  |TAMS 0x00000000c2000000, 0x00000000c2000000| Untracked 
+|  15|0x00000000c2100000, 0x00000000c2100000, 0x00000000c2200000|  0%| F|  |TAMS 0x00000000c2100000, 0x00000000c2100000| Untracked 
+|  16|0x00000000c2200000, 0x00000000c2200000, 0x00000000c2300000|  0%| F|  |TAMS 0x00000000c2200000, 0x00000000c2200000| Untracked 
+|  17|0x00000000c2300000, 0x00000000c2300000, 0x00000000c2400000|  0%| F|  |TAMS 0x00000000c2300000, 0x00000000c2300000| Untracked 
+|  18|0x00000000c2400000, 0x00000000c2400000, 0x00000000c2500000|  0%| F|  |TAMS 0x00000000c2400000, 0x00000000c2400000| Untracked 
+|  19|0x00000000c2500000, 0x00000000c2500000, 0x00000000c2600000|  0%| F|  |TAMS 0x00000000c2500000, 0x00000000c2500000| Untracked 
+|  20|0x00000000c2600000, 0x00000000c2600000, 0x00000000c2700000|  0%| F|  |TAMS 0x00000000c2600000, 0x00000000c2600000| Untracked 
+|  21|0x00000000c2700000, 0x00000000c2700000, 0x00000000c2800000|  0%| F|  |TAMS 0x00000000c2700000, 0x00000000c2700000| Untracked 
+|  22|0x00000000c2800000, 0x00000000c2800000, 0x00000000c2900000|  0%| F|  |TAMS 0x00000000c2800000, 0x00000000c2800000| Untracked 
+|  23|0x00000000c2900000, 0x00000000c2900000, 0x00000000c2a00000|  0%| F|  |TAMS 0x00000000c2900000, 0x00000000c2900000| Untracked 
+|  24|0x00000000c2a00000, 0x00000000c2a00000, 0x00000000c2b00000|  0%| F|  |TAMS 0x00000000c2a00000, 0x00000000c2a00000| Untracked 
+|  25|0x00000000c2b00000, 0x00000000c2b00000, 0x00000000c2c00000|  0%| F|  |TAMS 0x00000000c2b00000, 0x00000000c2b00000| Untracked 
+|  26|0x00000000c2c00000, 0x00000000c2c00000, 0x00000000c2d00000|  0%| F|  |TAMS 0x00000000c2c00000, 0x00000000c2c00000| Untracked 
+|  27|0x00000000c2d00000, 0x00000000c2d00000, 0x00000000c2e00000|  0%| F|  |TAMS 0x00000000c2d00000, 0x00000000c2d00000| Untracked 
+|  28|0x00000000c2e00000, 0x00000000c2e00000, 0x00000000c2f00000|  0%| F|  |TAMS 0x00000000c2e00000, 0x00000000c2e00000| Untracked 
+|  29|0x00000000c2f00000, 0x00000000c2f00000, 0x00000000c3000000|  0%| F|  |TAMS 0x00000000c2f00000, 0x00000000c2f00000| Untracked 
+|  30|0x00000000c3000000, 0x00000000c3000000, 0x00000000c3100000|  0%| F|  |TAMS 0x00000000c3000000, 0x00000000c3000000| Untracked 
+|  31|0x00000000c3100000, 0x00000000c3100000, 0x00000000c3200000|  0%| F|  |TAMS 0x00000000c3100000, 0x00000000c3100000| Untracked 
+|  32|0x00000000c3200000, 0x00000000c3200000, 0x00000000c3300000|  0%| F|  |TAMS 0x00000000c3200000, 0x00000000c3200000| Untracked 
+|  33|0x00000000c3300000, 0x00000000c3300000, 0x00000000c3400000|  0%| F|  |TAMS 0x00000000c3300000, 0x00000000c3300000| Untracked 
+|  34|0x00000000c3400000, 0x00000000c3400000, 0x00000000c3500000|  0%| F|  |TAMS 0x00000000c3400000, 0x00000000c3400000| Untracked 
+|  35|0x00000000c3500000, 0x00000000c3500000, 0x00000000c3600000|  0%| F|  |TAMS 0x00000000c3500000, 0x00000000c3500000| Untracked 
+|  36|0x00000000c3600000, 0x00000000c3600000, 0x00000000c3700000|  0%| F|  |TAMS 0x00000000c3600000, 0x00000000c3600000| Untracked 
+|  37|0x00000000c3700000, 0x00000000c3700000, 0x00000000c3800000|  0%| F|  |TAMS 0x00000000c3700000, 0x00000000c3700000| Untracked 
+|  38|0x00000000c3800000, 0x00000000c3800000, 0x00000000c3900000|  0%| F|  |TAMS 0x00000000c3800000, 0x00000000c3800000| Untracked 
+|  39|0x00000000c3900000, 0x00000000c3900000, 0x00000000c3a00000|  0%| F|  |TAMS 0x00000000c3900000, 0x00000000c3900000| Untracked 
+|  40|0x00000000c3a00000, 0x00000000c3a00000, 0x00000000c3b00000|  0%| F|  |TAMS 0x00000000c3a00000, 0x00000000c3a00000| Untracked 
+|  41|0x00000000c3b00000, 0x00000000c3b00000, 0x00000000c3c00000|  0%| F|  |TAMS 0x00000000c3b00000, 0x00000000c3b00000| Untracked 
+|  42|0x00000000c3c00000, 0x00000000c3c00000, 0x00000000c3d00000|  0%| F|  |TAMS 0x00000000c3c00000, 0x00000000c3c00000| Untracked 
+|  43|0x00000000c3d00000, 0x00000000c3d00000, 0x00000000c3e00000|  0%| F|  |TAMS 0x00000000c3d00000, 0x00000000c3d00000| Untracked 
+|  44|0x00000000c3e00000, 0x00000000c3e809c0, 0x00000000c3f00000| 50%| S|CS|TAMS 0x00000000c3e00000, 0x00000000c3e00000| Complete 
+|  45|0x00000000c3f00000, 0x00000000c4000000, 0x00000000c4000000|100%| S|CS|TAMS 0x00000000c3f00000, 0x00000000c3f00000| Complete 
+|  46|0x00000000c4000000, 0x00000000c4000000, 0x00000000c4100000|  0%| F|  |TAMS 0x00000000c4000000, 0x00000000c4000000| Untracked 
+|  47|0x00000000c4100000, 0x00000000c4100000, 0x00000000c4200000|  0%| F|  |TAMS 0x00000000c4100000, 0x00000000c4100000| Untracked 
+|  48|0x00000000c4200000, 0x00000000c4200000, 0x00000000c4300000|  0%| F|  |TAMS 0x00000000c4200000, 0x00000000c4200000| Untracked 
+|  49|0x00000000c4300000, 0x00000000c4300000, 0x00000000c4400000|  0%| F|  |TAMS 0x00000000c4300000, 0x00000000c4300000| Untracked 
+|  50|0x00000000c4400000, 0x00000000c4400000, 0x00000000c4500000|  0%| F|  |TAMS 0x00000000c4400000, 0x00000000c4400000| Untracked 
+|  51|0x00000000c4500000, 0x00000000c4500000, 0x00000000c4600000|  0%| F|  |TAMS 0x00000000c4500000, 0x00000000c4500000| Untracked 
+|  52|0x00000000c4600000, 0x00000000c4600000, 0x00000000c4700000|  0%| F|  |TAMS 0x00000000c4600000, 0x00000000c4600000| Untracked 
+|  53|0x00000000c4700000, 0x00000000c4700000, 0x00000000c4800000|  0%| F|  |TAMS 0x00000000c4700000, 0x00000000c4700000| Untracked 
+|  54|0x00000000c4800000, 0x00000000c4800000, 0x00000000c4900000|  0%| F|  |TAMS 0x00000000c4800000, 0x00000000c4800000| Untracked 
+|  55|0x00000000c4900000, 0x00000000c4900000, 0x00000000c4a00000|  0%| F|  |TAMS 0x00000000c4900000, 0x00000000c4900000| Untracked 
+|  56|0x00000000c4a00000, 0x00000000c4a00000, 0x00000000c4b00000|  0%| F|  |TAMS 0x00000000c4a00000, 0x00000000c4a00000| Untracked 
+|  57|0x00000000c4b00000, 0x00000000c4b00000, 0x00000000c4c00000|  0%| F|  |TAMS 0x00000000c4b00000, 0x00000000c4b00000| Untracked 
+|  58|0x00000000c4c00000, 0x00000000c4c00000, 0x00000000c4d00000|  0%| F|  |TAMS 0x00000000c4c00000, 0x00000000c4c00000| Untracked 
+|  59|0x00000000c4d00000, 0x00000000c4d80800, 0x00000000c4e00000| 50%| E|  |TAMS 0x00000000c4d00000, 0x00000000c4d00000| Complete 
+|  60|0x00000000c4e00000, 0x00000000c4f00000, 0x00000000c4f00000|100%| E|CS|TAMS 0x00000000c4e00000, 0x00000000c4e00000| Complete 
+|  61|0x00000000c4f00000, 0x00000000c5000000, 0x00000000c5000000|100%| E|CS|TAMS 0x00000000c4f00000, 0x00000000c4f00000| Complete 
+|  62|0x00000000c5000000, 0x00000000c5100000, 0x00000000c5100000|100%| E|CS|TAMS 0x00000000c5000000, 0x00000000c5000000| Complete 
+|  63|0x00000000c5100000, 0x00000000c5200000, 0x00000000c5200000|100%| E|CS|TAMS 0x00000000c5100000, 0x00000000c5100000| Complete 
+
+Card table byte_map: [0x00000144ee470000,0x00000144ee670000] _byte_map_base: 0x00000144ede67000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x00000144d77b1040, (CMBitMap*) 0x00000144d77b1080
+ Prev Bits: [0x00000144ee870000, 0x00000144ef828000)
+ Next Bits: [0x00000144ef830000, 0x00000144f07e8000)
+
+Polling page: 0x00000144d5650000
+
+Metaspace:
+
+Usage:
+  Non-class:      7.33 MB used.
+      Class:    865.21 KB used.
+       Both:      8.17 MB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,       7.38 MB ( 12%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,     960.00 KB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,       8.31 MB ( <1%) committed. 
+
+Chunk freelists:
+   Non-Class:  5.73 MB
+       Class:  14.98 MB
+        Both:  20.72 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 21.00 MB
+CDS: on
+MetaspaceReclaimPolicy: balanced
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - new_chunks_are_fully_committed: 0.
+ - uncommit_free_chunks: 1.
+ - use_allocation_guard: 0.
+ - handle_deallocations: 1.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 0.
+num_arena_births: 6.
+num_arena_deaths: 0.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 133.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 0.
+num_chunks_taken_from_freelist: 243.
+num_chunk_merges: 0.
+num_chunk_splits: 229.
+num_chunks_enlarged: 223.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120000Kb used=309Kb max_used=309Kb free=119690Kb
+ bounds [0x00000144e6d40000, 0x00000144e6fb0000, 0x00000144ee270000]
+CodeHeap 'profiled nmethods': size=120000Kb used=2194Kb max_used=2194Kb free=117805Kb
+ bounds [0x00000144df270000, 0x00000144df4e0000, 0x00000144e67a0000]
+CodeHeap 'non-nmethods': size=5760Kb used=1155Kb max_used=1170Kb free=4604Kb
+ bounds [0x00000144e67a0000, 0x00000144e6a10000, 0x00000144e6d40000]
+ total_blobs=1632 nmethods=1187 adapters=358
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 7.512 Thread 0x00000144f2cbd2c0 1181       3       kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Class::getEnumEntryCount (10 bytes)
+Event: 7.512 Thread 0x00000144f2cbd2c0 nmethod 1181 0x00000144df491410 code [0x00000144df4915c0, 0x00000144df491788]
+Event: 7.512 Thread 0x00000144f2cbd2c0 1182       1       kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Class::getFqName (5 bytes)
+Event: 7.512 Thread 0x00000144f2c5a640 1184       4       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 7.512 Thread 0x00000144f2cbd2c0 nmethod 1182 0x00000144e6d8c610 code [0x00000144e6d8c7a0, 0x00000144e6d8c878]
+Event: 7.512 Thread 0x00000144f2cbd2c0 1183       1       kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor::getC (5 bytes)
+Event: 7.512 Thread 0x00000144f2cbd2c0 nmethod 1183 0x00000144e6d8c910 code [0x00000144e6d8caa0, 0x00000144e6d8cb78]
+Event: 7.512 Thread 0x00000144f2cbd2c0 1185       1       kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$EnumEntry::getName (5 bytes)
+Event: 7.512 Thread 0x00000144f2cbd2c0 nmethod 1185 0x00000144e6d8cc10 code [0x00000144e6d8cda0, 0x00000144e6d8ce78]
+Event: 7.513 Thread 0x00000144f2c5a640 nmethod 1184 0x00000144e6d8cf10 code [0x00000144e6d8d080, 0x00000144e6d8d118]
+Event: 7.518 Thread 0x00000144f2cbd2c0 1187       3       kotlin.reflect.jvm.internal.impl.metadata.jvm.JvmProtoBuf$JvmPropertySignature::getSerializedSize (140 bytes)
+Event: 7.520 Thread 0x00000144f2cbd2c0 nmethod 1187 0x00000144df491890 code [0x00000144df491bc0, 0x00000144df492ad8]
+Event: 7.520 Thread 0x00000144f2cbd2c0 1188       3       kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedClassDescriptor::getTypeConstructor (8 bytes)
+Event: 7.521 Thread 0x00000144f2cbd2c0 nmethod 1188 0x00000144df493190 code [0x00000144df493320, 0x00000144df493438]
+Event: 7.522 Thread 0x00000144f2cbd2c0 1189       3       java.util.Collections$SingletonList::get (41 bytes)
+Event: 7.523 Thread 0x00000144f2cbd2c0 nmethod 1189 0x00000144df493510 code [0x00000144df493760, 0x00000144df493e88]
+Event: 7.524 Thread 0x00000144f2cbd2c0 1190       3       kotlin.reflect.jvm.internal.impl.descriptors.impl.ModuleDescriptorImpl::assertValid (15 bytes)
+Event: 7.525 Thread 0x00000144f2cbd2c0 nmethod 1190 0x00000144df494190 code [0x00000144df494340, 0x00000144df4944c8]
+Event: 7.525 Thread 0x00000144f2cbd2c0 1191       3       kotlin.reflect.jvm.internal.impl.descriptors.impl.AbstractClassDescriptor::getDefaultType (22 bytes)
+Event: 7.525 Thread 0x00000144f2cbd2c0 nmethod 1191 0x00000144df494590 code [0x00000144df494740, 0x00000144df494a78]
+
+GC Heap History (4 events):
+Event: 4.678 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 65536K, used 16384K [0x00000000c1200000, 0x0000000100000000)
+  region size 1024K, 13 young (13312K), 0 survivors (0K)
+ Metaspace       used 3913K, committed 4096K, reserved 1114112K
+  class space    used 326K, committed 384K, reserved 1048576K
+}
+Event: 4.882 GC heap after
+{Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 65536K, used 5266K [0x00000000c1200000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 3913K, committed 4096K, reserved 1114112K
+  class space    used 326K, committed 384K, reserved 1048576K
+}
+Event: 7.032 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 65536K, used 20626K [0x00000000c1200000, 0x0000000100000000)
+  region size 1024K, 18 young (18432K), 2 survivors (2048K)
+ Metaspace       used 7800K, committed 7936K, reserved 1114112K
+  class space    used 819K, committed 896K, reserved 1048576K
+}
+Event: 7.043 GC heap after
+{Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 65536K, used 6836K [0x00000000c1200000, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 2 survivors (2048K)
+ Metaspace       used 7800K, committed 7936K, reserved 1114112K
+  class space    used 819K, committed 896K, reserved 1048576K
+}
+
+Dll operation events (6 events):
+Event: 0.035 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\java.dll
+Event: 0.129 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\jsvml.dll
+Event: 0.402 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\net.dll
+Event: 0.457 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\nio.dll
+Event: 0.848 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\zip.dll
+Event: 4.025 Loaded shared library C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\jimage.dll
+
+Deoptimization events (20 events):
+Event: 6.502 Thread 0x00000144d7775530 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00000144e6d71770 relative=0x00000000000004f0
+Event: 6.502 Thread 0x00000144d7775530 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00000144e6d71770 method=kotlin.reflect.jvm.internal.impl.protobuf.CodedInputStream.tryRefillBuffer(I)Z @ 175 c2
+Event: 6.502 Thread 0x00000144d7775530 DEOPT PACKING pc=0x00000144e6d71770 sp=0x00000032eaffc2e0
+Event: 6.502 Thread 0x00000144d7775530 DEOPT UNPACKING pc=0x00000144e67f69a3 sp=0x00000032eaffc1c8 mode 2
+Event: 6.586 Thread 0x00000144d7775530 Uncommon trap: trap_request=0xffffff45 fr.pc=0x00000144e6d6a1f8 relative=0x0000000000000538
+Event: 6.586 Thread 0x00000144d7775530 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000144e6d6a1f8 method=java.util.concurrent.ConcurrentHashMap.get(Ljava/lang/Object;)Ljava/lang/Object; @ 76 c2
+Event: 6.586 Thread 0x00000144d7775530 DEOPT PACKING pc=0x00000144e6d6a1f8 sp=0x00000032eaffc740
+Event: 6.586 Thread 0x00000144d7775530 DEOPT UNPACKING pc=0x00000144e67f69a3 sp=0x00000032eaffc6c8 mode 2
+Event: 7.067 Thread 0x00000144d7775530 Uncommon trap: trap_request=0xffffff45 fr.pc=0x00000144e6d73194 relative=0x00000000000004d4
+Event: 7.067 Thread 0x00000144d7775530 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000144e6d73194 method=java.util.ArrayList.grow(I)[Ljava/lang/Object; @ 17 c2
+Event: 7.067 Thread 0x00000144d7775530 DEOPT PACKING pc=0x00000144e6d73194 sp=0x00000032eaffdf70
+Event: 7.067 Thread 0x00000144d7775530 DEOPT UNPACKING pc=0x00000144e67f69a3 sp=0x00000032eaffddf8 mode 2
+Event: 7.324 Thread 0x00000144d7775530 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00000144e6d71770 relative=0x00000000000004f0
+Event: 7.324 Thread 0x00000144d7775530 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00000144e6d71770 method=kotlin.reflect.jvm.internal.impl.protobuf.CodedInputStream.tryRefillBuffer(I)Z @ 175 c2
+Event: 7.324 Thread 0x00000144d7775530 DEOPT PACKING pc=0x00000144e6d71770 sp=0x00000032eaffc160
+Event: 7.324 Thread 0x00000144d7775530 DEOPT UNPACKING pc=0x00000144e67f69a3 sp=0x00000032eaffc048 mode 2
+Event: 7.331 Thread 0x00000144d7775530 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x00000144e6d71770 relative=0x00000000000004f0
+Event: 7.331 Thread 0x00000144d7775530 Uncommon trap: reason=bimorphic_or_optimized_type_check action=maybe_recompile pc=0x00000144e6d71770 method=kotlin.reflect.jvm.internal.impl.protobuf.CodedInputStream.tryRefillBuffer(I)Z @ 175 c2
+Event: 7.331 Thread 0x00000144d7775530 DEOPT PACKING pc=0x00000144e6d71770 sp=0x00000032eaffc160
+Event: 7.331 Thread 0x00000144d7775530 DEOPT UNPACKING pc=0x00000144e67f69a3 sp=0x00000032eaffc048 mode 2
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (18 events):
+Event: 0.849 Executing VM operation: HandshakeAllThreads
+Event: 0.849 Executing VM operation: HandshakeAllThreads done
+Event: 1.861 Executing VM operation: Cleanup
+Event: 1.862 Executing VM operation: Cleanup done
+Event: 2.624 Executing VM operation: HandshakeAllThreads
+Event: 2.624 Executing VM operation: HandshakeAllThreads done
+Event: 3.633 Executing VM operation: Cleanup
+Event: 3.650 Executing VM operation: Cleanup done
+Event: 4.611 Executing VM operation: HandshakeAllThreads
+Event: 4.611 Executing VM operation: HandshakeAllThreads done
+Event: 4.678 Executing VM operation: G1CollectForAllocation
+Event: 4.882 Executing VM operation: G1CollectForAllocation done
+Event: 5.893 Executing VM operation: Cleanup
+Event: 5.909 Executing VM operation: Cleanup done
+Event: 6.508 Executing VM operation: HandshakeAllThreads
+Event: 6.508 Executing VM operation: HandshakeAllThreads done
+Event: 7.032 Executing VM operation: G1CollectForAllocation
+Event: 7.043 Executing VM operation: G1CollectForAllocation done
+
+Events (20 events):
+Event: 6.229 loading class sun/reflect/generics/tree/ClassSignature
+Event: 6.229 loading class sun/reflect/generics/tree/Signature
+Event: 6.229 loading class sun/reflect/generics/tree/Signature done
+Event: 6.229 loading class sun/reflect/generics/tree/ClassSignature done
+Event: 6.229 loading class java/lang/reflect/TypeVariable
+Event: 6.229 loading class java/lang/reflect/TypeVariable done
+Event: 6.315 loading class java/lang/reflect/AnnotatedType
+Event: 6.315 loading class java/lang/reflect/AnnotatedType done
+Event: 6.510 loading class java/util/LinkedList$ListItr
+Event: 6.510 loading class java/util/LinkedList$ListItr done
+Event: 6.591 loading class java/lang/Class$EnclosingMethodInfo
+Event: 6.592 loading class java/lang/Class$EnclosingMethodInfo done
+Event: 6.599 loading class java/lang/reflect/ParameterizedType
+Event: 6.599 loading class java/lang/reflect/ParameterizedType done
+Event: 6.646 loading class java/lang/ArrayIndexOutOfBoundsException
+Event: 6.646 loading class java/lang/ArrayIndexOutOfBoundsException done
+Event: 7.065 loading class java/io/NotSerializableException
+Event: 7.065 loading class java/io/ObjectStreamException
+Event: 7.065 loading class java/io/ObjectStreamException done
+Event: 7.066 loading class java/io/NotSerializableException done
+
+
+Dynamic libraries:
+0x00007ff781190000 - 0x00007ff78119e000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\java.exe
+0x00007ffd69210000 - 0x00007ffd69408000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd68460000 - 0x00007ffd6851d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffd66e90000 - 0x00007ffd67186000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffd66b70000 - 0x00007ffd66c70000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffd56120000 - 0x00007ffd56137000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\jli.dll
+0x00007ffd67f40000 - 0x00007ffd680df000 	C:\Windows\System32\USER32.dll
+0x00007ffd66a80000 - 0x00007ffd66aa2000 	C:\Windows\System32\win32u.dll
+0x00007ffd67e90000 - 0x00007ffd67ebb000 	C:\Windows\System32\GDI32.dll
+0x00007ffd66960000 - 0x00007ffd66a77000 	C:\Windows\System32\gdi32full.dll
+0x00007ffd668c0000 - 0x00007ffd6695d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffd54050000 - 0x00007ffd5406b000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\VCRUNTIME140.dll
+0x00007ffd57dd0000 - 0x00007ffd5806a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5\COMCTL32.dll
+0x00007ffd682a0000 - 0x00007ffd6833e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffd68dd0000 - 0x00007ffd68e02000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd60540000 - 0x00007ffd6054c000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\vcruntime140_1.dll
+0x00007ffd36c60000 - 0x00007ffd36ced000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\msvcp140.dll
+0x00007ffd1ce10000 - 0x00007ffd1da75000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\server\jvm.dll
+0x00007ffd67de0000 - 0x00007ffd67e90000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffd68200000 - 0x00007ffd682a0000 	C:\Windows\System32\sechost.dll
+0x00007ffd67750000 - 0x00007ffd67873000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffd66c70000 - 0x00007ffd66c97000 	C:\Windows\System32\bcrypt.dll
+0x00007ffd65e00000 - 0x00007ffd65e4b000 	C:\Windows\SYSTEM32\POWRPROF.dll
+0x00007ffd613e0000 - 0x00007ffd613e9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffd672f0000 - 0x00007ffd6735b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffd604f0000 - 0x00007ffd60517000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd5c3d0000 - 0x00007ffd5c3da000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd65cc0000 - 0x00007ffd65cd2000 	C:\Windows\SYSTEM32\UMPDC.dll
+0x00007ffd64670000 - 0x00007ffd64682000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffd5ebb0000 - 0x00007ffd5ebba000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\jimage.dll
+0x00007ffd5f970000 - 0x00007ffd5fb54000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffd5f8b0000 - 0x00007ffd5f8e4000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffd66e00000 - 0x00007ffd66e82000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffd46470000 - 0x00007ffd46495000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\java.dll
+0x00007ffd34b50000 - 0x00007ffd34c27000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\jsvml.dll
+0x00007ffd68660000 - 0x00007ffd68dcb000 	C:\Windows\System32\SHELL32.dll
+0x00007ffd64950000 - 0x00007ffd650ee000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007ffd68e10000 - 0x00007ffd69163000 	C:\Windows\System32\combase.dll
+0x00007ffd662f0000 - 0x00007ffd6631e000 	C:\Windows\SYSTEM32\Wldp.dll
+0x00007ffd673c0000 - 0x00007ffd6748d000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ffd683b0000 - 0x00007ffd6845d000 	C:\Windows\System32\SHCORE.dll
+0x00007ffd676f0000 - 0x00007ffd67745000 	C:\Windows\System32\shlwapi.dll
+0x00007ffd667f0000 - 0x00007ffd66813000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffd56230000 - 0x00007ffd56249000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\net.dll
+0x00007ffd5dae0000 - 0x00007ffd5dbea000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x00007ffd66050000 - 0x00007ffd660ba000 	C:\Windows\system32\mswsock.dll
+0x00007ffd50430000 - 0x00007ffd50446000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\nio.dll
+0x00007ffd4ed90000 - 0x00007ffd4eda8000 	C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.3636_none_60b6a03d71f818d5;C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin\server
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Sentrix Technologies\react-native-ediary\node_modules\react-native-safe-area-context\android\build\20240423_9569901468504687564.compiler.options
+java_class_path (initial): C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.6.20\18f66cca4301c12893ebe4ef47d65c3d9d2bff9b\kotlin-compiler-embeddable-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.6.20\669965154723f1a712e8677af0cc5470dfdab81c\kotlin-reflect-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.6.20\6cedc143badbb4f1c6b7f5a340b04edff1743208\kotlin-stdlib-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.6.20\a115c367e0fd9c8909293b208689afca0c88a6f1\kotlin-script-runtime-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-daemon-embeddable\1.6.20\d4cac343029f48f106c57f457384771165d7deb5\kotlin-daemon-embeddable-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.intellij.deps\trove4j\1.0.20200330\3afb14d5f9ceb459d724e907a21145e8ff394f02\trove4j-1.0.20200330.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.6.0\330f2244e9030119ab3030fc3fededc86713d9cc\jna-5.6.0.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.6.20\27b4562b6713d70f458c6d7ea39aadacb8e6a92b\kotlin-stdlib-common-1.6.20.jar;C:\Users\ACER\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 67108864                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1054867456                                {product} {ergonomic}
+   size_t MaxNewSize                               = 632291328                                 {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1054867456                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot
+CLASSPATH=C:\Sentrix Technologies\react-native-ediary\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=C:\Sentrix Technologies\react-native-ediary\node_modules\.bin;C:\Sentrix Technologies\react-native-ediary\node_modules\.bin;C:\Sentrix Technologies\node_modules\.bin;C:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Sentrix Technologies\react-native-ediary\node_modules\.bin;C:\Sentrix Technologies\node_modules\.bin;C:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Program Files\Microsoft\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\ProgramData\chocolatey\bin;%LOCALAPPDATA%\Android\Sdk\platform-tools;C:\Program Files\nodejs\;C:\Users\ACER\AppData\Local\Android\Sdk\tools;C:\Users\ACER\AppData\Local\Android\Sdk\platform-tools;C:\Users\ACER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ACER\AppData\Local\GitHubDesktop\bin;C:\Users\ACER\AppData\Roaming\Composer\vendor\bin;C:\Users\ACER\AppData\Local\Android\Sdk\emulator;C:\Users\ACER\AppData\Local\Android\Sdk\build-tools;C:\Users\ACER\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-15.0.2;C:\Program Files\nodejs;C:\Users\ACER\AppData\Roaming\npm
+USERNAME=ACER
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+TMP=C:\Users\ACER\AppData\Local\Temp
+TEMP=C:\Users\ACER\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.3636)
+OS uptime: 7 days 1:37 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1 microcode 0x25, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, fma, vzeroupper, clflush
+Processor Information for all 4 processors :
+  Max Mhz: 2401, Current Mhz: 1700, Mhz Limit: 1680
+
+Memory: 4k page, system-wide physical 4019M (172M free)
+TotalPageFile size 16307M (AvailPageFile size 0M)
+current process WorkingSet (physical memory assigned to process): 75M, peak: 75M
+current process commit charge ("private bytes"): 149M, peak: 150M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.8+7-LTS) for windows-amd64 JRE (17.0.8+7-LTS), built on Jul  7 2023 17:21:55 by "MicrosoftCorporation" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
